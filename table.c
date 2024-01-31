@@ -1,8 +1,9 @@
 #include "table.h"
 void table(int **data){
     int a = 12, b = 40;
-    char c;
+    char c = '\n';
     while(1){
+        char o;
         c=getchar();
         if(c=='\n'){
             continue;
@@ -28,10 +29,28 @@ void table(int **data){
             }
             for(int i = 0; i<NMAXY;++i){
                     for(int j =0; j<NMAXX;++j){
-                        printf("%d",data[i][j]);
+                        if(data[i][j]==0){
+                            printf("%c",' ');
+                        }
+                        else if(data[i][j]==2){
+                            printf("%c",'*');
+                        }
+                        else if(data[i][j]==3 && c=='w'){
+                            printf("%c",'^');
+                        }
+                        else if(data[i][j]==3 && c=='s'){
+                            printf("%c",'v');
+                        }
+                        else if(data[i][j]==3 && c=='d'){
+                            printf("%c",'>');
+                        }
+                        else if(data[i][j]==3 && c=='a'){
+                            printf("%c",'<');
+                        }
                     }
                     printf("\n");
             }
         }
+        c=o;
     }
 }

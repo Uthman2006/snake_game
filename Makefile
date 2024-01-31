@@ -13,5 +13,7 @@ snake.out : $(SNAKE_C) $(SNAKE_H)
 table.out : $(TABLE_C) $(TABLE_H)
 	$(CC) $(CFLAGS) $< -c $@
 rebuild : clean all
+start : main 
+	./main
 clean : 
 	rm -r *.o main
